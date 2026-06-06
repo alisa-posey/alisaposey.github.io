@@ -1,0 +1,1 @@
+These files contain work experience information using HTML and CSS and serve as my portfolio while also showcasing some of my web development skills.  I have also used JavaScript to have a password access to the site.
