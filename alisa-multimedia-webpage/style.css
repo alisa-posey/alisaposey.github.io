@@ -1,0 +1,505 @@
+
+
+/*CSS for Home Page*/
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width:100%;
+  height: 100%;
+}
+
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color:black;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/6 etc) */
+.numbertext {
+  color: black;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+	cursor: pointer;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+
+
+/*All CSS for other pages below*/
+
+body{
+	margin:0%;
+	padding:0%;
+	max-width: 100%;
+
+}
+
+
+.web-title{
+	
+		background-image: url("images/alisa-multimedia.jpg");
+		background-position: center;	
+		background-size:cover;
+	
+		background-color: lightgray;
+	
+	overflow:hidden;
+
+	
+	background-repeat: no-repeat;
+
+	
+}
+
+
+
+.alisa-posey-title{
+	text-align: center;
+	font-size: 400%;
+	color: white;
+	width: 100%;
+	padding-top: 300px;
+	position: relative;
+	top: -90px;
+
+	
+	
+	
+	
+}
+
+.alisa-posey-subtitle{
+	text-align: center;
+	font-size: 200%;
+	color: white;
+
+	width: 100%;
+	position: relative;
+	top: -120px;
+
+
+}
+
+.navbar{
+	padding: 1%;
+	 border-top: 2px solid black;
+	background-color: lightblue;
+}
+
+.dropdown-titles {
+	
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Style the dropdown button */
+.dropbtn {
+  background-color:  lightblue;
+  color: white;
+  font-size: 180%;
+  border: none;
+  cursor: pointer;
+
+
+}
+
+
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: lightblue;
+  min-width: 10%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Links inside dropdown content */
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
+
+/* Show the dropdown content on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change background color of dropdown button on hover */
+.dropdown:hover .dropbtn {
+  background-color:lightblue;
+}
+
+
+
+	
+	
+.page-footer{
+background-color:  lightblue;
+	margin: 0;
+	width:100%;
+	padding:0;
+	
+	
+}
+
+.social-media{
+	
+	list-style: none;
+	padding: 0;
+	margin:0;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	justify-content: space-around;
+	font-size: 500%;
+
+
+}
+
+
+.bio-image{
+	
+	border: 7px solid lightblue;
+	border-radius: 20px;
+	box-sizing: border-box;
+	display: block;
+	width: 550px;
+	height: auto;
+	margin-left: auto;
+	margin-right:auto;
+	padding: 0;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+
+.bio-container-images{
+	
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	padding: 0;
+	margin: 0;
+	margin-top: 0%;
+	margin-bottom: 0%;
+}
+
+.most-recent{
+
+    padding: 20%;
+	padding-top: 7%;
+	padding-bottom: 7%;
+	background-color:white;
+}
+
+
+.most-recent-video{
+
+	
+	border: 7px solid lightblue;
+	border-radius: 20px;
+	box-sizing: border-box;
+	display: block;
+	width: 700px;
+	height: 400px;
+	margin-left: auto;
+	margin-right:auto;
+
+
+}
+
+.eoi-video{
+border: 7px solid lightblue;
+border-radius: 20px;
+width:600px;
+height: 400px;
+object-fit: cover;
+ 
+}
+
+.personal-projects-video{
+border: 7px solid lightblue;
+border-radius: 20px;
+width:600px;
+height: 400px;
+object-fit: cover;
+ 
+}
+
+.data-works-playlists{
+border: 7px solid lightblue;
+border-radius: 20px;
+width:600px;
+height: 400px;
+object-fit: cover;
+ 
+}
+
+
+
+
+
+.video-container{
+	
+ border-top: 2px solid black;;
+	display:flex;
+flex-direction: row;
+justify-content: center;
+
+background-color:  darkgray;
+margin-bottom: -15px;
+padding-bottom:  15px;
+
+}
+
+.video-container-2{
+	
+padding-top: 30px;
+padding-bottom: 30px;;
+	display:flex;
+flex-direction: row;
+justify-content: center;
+background-color:  darkgray;
+margin-bottom: -15px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.video_title{
+	
+	text-align:center;
+	font-weight: 1000;
+	font-size: 100%;
+	padding: 2%;
+	
+
+	
+}
+
+
+.bio-info{
+	
+
+	background-color: rgb(240, 233, 233);
+	border: 7px solid lightblue;
+	border-radius: 20px;
+	padding: 20px;
+	
+	
+padding-bottom: 20px;
+
+	font-size: 120%;
+	font-weight: 1000;
+	text-align: left;
+
+	
+}
+
+.more-info{
+	
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	background-color:rgba(255,255,255,1.00);
+	margin: 0;
+	padding:20px;
+	font-size: 120%;
+	font-weight: 1000;
+	text-align: center;
+
+	
+}
+
+.more-info-2{
+	
+
+	border-bottom: 2px solid black;
+	background-color:rgba(255,255,255,1.00);
+	margin: 0;
+	padding:20px;
+	font-size: 120%;
+	font-weight: 1000;
+	text-align: center;
+
+	
+}
+
+
+
+.eoi-title{
+	
+	text-align: center;
+	font-size: 200%;
+background-color:  rgba(126,125,126,.6);
+	margin: 0;
+	width:auto;
+	padding:2%;
+	 border-top: 2px solid black;
+	 border-bottom: 2px solid black;
+	
+}
+
+
+.footer-title{
+	
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+
+
+a {
+color: white;
+  text-decoration: none;
+}
+
+
+
+a:hover,
+ a:active {
+  color: black;
+  text-decoration: none;
+}
+
+.dropbtn a {
+  color: white;
+  text-decoration: none;
+}
+
+.dropbtn a:hover {
+  color: black;
+}
+.dropdown-content a {
+  color: white;
+  text-decoration: none;
+}
+.dropdown-content a:hover {
+  color: black;
+  background-color: transparent;
+}
+.eoi-link {
+  color: lightblue;
+}
+.eoi-link:hover {
+  color: darkorange;
+}
+
+.go-here {
+  color: lightblue;
+}
+.go-here:hover {
+  color: darkorange;
+}
+
+.contact-info:link {
+  color: lightblue;
+}
+
+.contact-info:hover {
+  color: darkorange;
+}
+
+.fa:link {
+  color: white;
+  background-color: transparent;
+}
+
+.fa:hover {
+  color: black;
+  background-color: transparent;
+}
+
+.award-image{
+	
+	border: 7px solid lightblue;
+	border-radius: 20px;
+	box-sizing: border-box;
+	display: block;
+	width: 750px;
+	height: auto;
+	margin-left: auto;
+	margin-right:auto;
+	padding: 0;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.cinema-favicon{
+	
+	font-size: 80%;
+	text-align: center;
+}
