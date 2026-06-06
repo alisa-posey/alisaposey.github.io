@@ -7,9 +7,9 @@
     const currentPage = window.location.pathname.split("/").pop();
 
     // If not authenticated and not already on the login page, redirect to login
-    if (!isAuthenticated && currentPage !== "login.html" && currentPage !== "") {
+    if (!isAuthenticated && currentPage !== "index.html" && currentPage !== "") {
         // Prevent flashing of protected content before redirecting
         document.documentElement.style.display = "none";
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     }
 })();

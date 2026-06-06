@@ -1,169 +1,60 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alisa Posey Homepage</title>
-    <script src="auth-guard.js" defer></script>
-	<link rel="icon" type="image/x-icon" href="images/clapperboard.png">
-<link href="style.css" rel="stylesheet" type="text/css">
-
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background: #f4f4f4; }
+        .login-box { background: white; padding: 30px; border-radius: 8px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1); text-align: center; }
+        input { padding: 10px; margin: 10px 0; width: 80%; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 10px 20px; background: #007BFF; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        .error { color: red; display: none; margin-top: 10px; }
+    </style>
 </head>
-
 <body>
-	
-	
-	 <div class="web-title">
-	<div class="page-title">
-	<h1 class="alisa-posey-title">Alisa Posey</h1>
-	<h3 class="alisa-posey-subtitle">Multimedia Specialist</h3>
-		</div>
-		</div>
-	
-	<header class="navbar">
-		  <div class="container" style="margin:0 10px;">
-		  	  
-			  <nav>
-				  
-				  <div class="dropdown-titles">
-					  
-	<div class="dropdown">
-  <button class="dropbtn"><a href="index.html">Home</a></button>
-  <div class="dropdown-content">
-  
-  </div>
+
+<div class="login-box">
+    <h2>Enter Password for Access</h2>
+    <input type="password" id="passwordInput" placeholder="Password">
+    <br>
+    <button onclick="validatePassword()">Submit</button>
+    <div id="errorMsg" class="error">Incorrect password. Please try again.</div>
 </div>
 
-	
-	<div class="dropdown">
-  <button class="dropbtn">Bio</button>
-  <div class="dropdown-content">
-    <a href="bio.html">About Alisa</a>
-	
-
-	
+<script>
+async function validatePassword() {
+    const targetHash = "33075655a691741a85b63641b8695a676974373bd502961989e05df8168ca9aa";
+    const userInput = document.getElementById("passwordInput").value;
+    const errorMsg = document.getElementById("errorMsg");
     
-  </div>
-</div>
+    // Encode user input text into bytes
+    const encoder = new TextEncoder();
+    const data = encoder.encode(userInput);
+    
+    // Hash the bytes using SHA-256
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    
+    // Convert hash back into a hex string
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const userHash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 
-<div class="dropdown">
-  <button class="dropbtn">Professional Video Work</button>
-  <div class="dropdown-content">
-    <a href="eye-on-ida.html">Eye on IDA</a>
-	<a href="personal-projects.html">Personal Projects</a>
+    if (userHash === targetHash) {
+        // Set the session flag so auth-guard.js lets them pass
+        sessionStorage.setItem("site_authenticated", "true");
+        // Redirect to your main index file
+        window.location.href = "index-2.html";
+    } else {
+        errorMsg.style.display = "block";
+    }
+}
 
-  </div>
-</div>
+// Allow pressing "Enter" key to submit
+document.getElementById("passwordInput").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        validatePassword();
+    }
+});
+</script>
 
-
-
-	<div class="dropdown">
-  <button class="dropbtn">Live Event Work</button>
-  <div class="dropdown-content">
-    <a href="data-works.html">DATAWorks 2022 - 2026</a>
-  </div>
-</div>
-	
-	
-
-
-	</div>
-				  
-		
-	</nav>
-	  </div>
-	</header>
-	
-	
-
-
-	
-	
-	
-			 
-	 <h2 class="eoi-title">Professional Multimedia Work Favorites</h2>
-	
-	
-	<div class="slideshow-container">
-		  <div class="mySlides fade">
-			  <div class="numbertext">1 / 3</div>
-		
-
-			<figure>
-			<figcaption class="video_title">Earley: A Short Documentary</figcaption>
-			<iframe id="myVideo" class="most-recent-video" width="960" height="615" src="https://www.youtube.com/embed/yxYmTm7pQuw?si=5tanm1y0H8P_9zPk&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-		
-			</figure>
-			   <div class="text">Earley: A Short Documentary</div>
-		</div>
-	
-	
-	
-		  <div class="mySlides fade">
-			  <div class="numbertext">2 / 3</div>
-			  <figure>
-			<figcaption class="video_title">Eye on IDA: Military Compensation & Families</figcaption>
-		<iframe  id="myVideo2" class = "most-recent-video"  width="960" height="615" src="https://www.youtube.com/embed/BIvgyAyJGQs?si=4hAboAKMuarpZDnQ&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-			</figure>
-			  <div class="text">Eye on IDA: Military Compensation & Families</div>
-</div>
-	
-	
-
-		  <div class="mySlides fade">
-			  <div class="numbertext">3 / 3</div>
-	<figure>
-		<figcaption class="video_title">Eye on IDA: Behavioral Neuroscience</figcaption>
-			<iframe  id="myVideo3" class = "most-recent-video"  width="960" height="615" src="https://www.youtube.com/embed/5nqHpMhHH_U?si=LjIPTBg_sGADZZp4&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-			</figure>
-			   <div class="text">Eye on IDA: Behavioral Neuroscience</div>
-			  </div>
-	
-
-	
-	  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-<br>
-	</div>
-<!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-
-</div>
-
-
-
-      
-
-	<p class="more-info">Contact me at <a class="contact-info" href="mailto:alisaposey@icloud.com">alisaposey@icloud.com</a> to get to know me and the work that I do.</p>
-	
-	<footer class="page-footer">
-	   <div class="footer-container">
-						  
-	<h2 class="footer-title">Social Media</h2>
-		<ul class="social-media">
-			<li><a href="https://www.youtube.com/@alisaposey7282" class="fa fa-youtube"></a></li>
-			
-			
-		
-		
-		<li><a href="https://www.linkedin.com/in/alisa-posey-97577b269" class="fa fa-linkedin"></a></li>
-		   
-		   </ul>
-		    <p class="cinema-favicon">Cinema icons created by <a href="https://www.flaticon.com/free-icons/cinema" title="cinema icons">Hilmy Abiyyu A. - Flaticon</a></p>
-      </div>
-		</footer>
-	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-	
-	
-
-	
-	<script src="index.js"></script>	
 </body>
 </html>
