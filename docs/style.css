@@ -73,12 +73,9 @@ img {vertical-align: middle;}
 }
 
 /* On smaller screens, decrease text size */
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 300px) {
   .text {font-size: 11px}
-  
-  .dropbtn {font-size: 11px}
-  .dropdown-content {font-size: 11px}
-  .dropdown-titles {font-size: 11px}
+
 }
 
 
